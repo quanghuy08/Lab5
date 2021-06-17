@@ -1,45 +1,35 @@
 ﻿using System;
-using Lab5.Customer;
-using Lab5.Order;
 
 namespace Lab5
 {
-    namespace Customer
-    {
-        class CustomerName
-        {
-            public String customerName { get; set; }
-        }
-    }
-    
-    namespace Order
-    {   class GroceryItems
-        {
-            public void groceryItems()
-            {
-                Console.WriteLine("Grocery Items");
-            }
-        }
-
-        class BakeryProducts
-        {
-            public void bakeryProducts()
-            {
-                Console.WriteLine("Bakery Products");
-            }
-        }
-    }
     internal class Program
     {
         public static void Main(string[] args)
         {
-            CustomerName customerName = new CustomerName();
-            customerName.customerName = "Customer";
-            Console.WriteLine(customerName);
+            var highSchoolTeacher = new HighSchoolTeacher
+            {
+                IdentilyNumber = "ID001",
+                name = "Spring Hero",
+                BaseSalary = 100,
+                Level = 1,
+                Bonus = 100,
+                IsSenior = false,
+                HighSchoolCode = "HS001"
+            };
+            Console.WriteLine(highSchoolTeacher.CalculateSalary());
 
-            Console.WriteLine("Customer has choice grocery items: ");
-            GroceryItems groceryItems = new GroceryItems();
-            groceryItems.groceryItems();
+            var universityTaecher = new UniversityTeacher
+            {
+                IdentilyNumber = "ID001",
+                name = "Dao Xuan",
+                BaseSalary = 60000,
+                Level = 1,
+                Bonus = 9000,
+                IsSenior = true,
+                Englishlevel = 2,
+                UniversityCode = "UN001"
+            };
+            Console.WriteLine(universityTaecher.CalculateSalary());
         }
     }
 }

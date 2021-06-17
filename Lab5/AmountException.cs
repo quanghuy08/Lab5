@@ -2,8 +2,21 @@
 
 namespace Lab5
 {
-    public class AmountException
+    public class AmountException : Exception
     {
-        public String personName { get; set; }
+        private string _personName;
+        private string _message;
+
+        public AmountException(string message, string personName) : base(message)
+        {
+            this._message = message;
+            this._personName = _personName;
+            PrintError();
+        }
+
+        private void PrintError()
+        {
+            Console.Error.WriteLine($"Error: {_message}, Name {_personName}");
+        }
     }
 }
